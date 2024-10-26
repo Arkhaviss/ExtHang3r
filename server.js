@@ -1,7 +1,7 @@
 // Import required modules
 const express = require('express');
 const path = require('path');
-const session = require('express-session'); // Import express-session
+const session = require('express-session'); // Import express-session for session management
 
 // Initialize Express app
 const app = express();
@@ -9,33 +9,15 @@ const app = express();
 // Set the port
 const PORT = process.env.PORT || 3000;
 
-// Middleware to parse URL-encoded bodies
-app.use(express.urlencoded({ extended: true }));
-
-// Session configuration
+// Session middleware
 app.use(session({
-  secret: 'your_secret_key', // Change this to a strong secret in production
+  secret: 'your-secret-key', // Replace with a strong secret
   resave: false,
   saveUninitialized: true,
 }));
 
 // Serve static files from the "public" directory
 app.use(express.static(path.join(__dirname, 'public')));
-
-// Simple authentication
-const USERNAME = 'admin'; // Set your username here
-const PASSWORD = 'password'; // Set your password here
-
-// Route to handle login
-app.post('/login', (req, res) => {
-  const { username, password } = req.body;
-  if (username === USERNAME && password === PASSWORD) {
-    req.session.authenticated = true; // Set authentication status
-    res.redirect('/'); // Redirect to main page
-  } else {
-    res.send('Invalid username or password'); // Send error message
-  }
-});
 
 // Route to serve the main HTML file
 app.get('/', (req, res) => {
