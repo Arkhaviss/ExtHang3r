@@ -1,12 +1,11 @@
 {
   "name": "ExtHang3r",
   "version": "1.0.0",
-  "description": "A project to exploit ChromeOS extensions.",
-  "main": "server.js",
+  "dependencies": {
+    "express": "^4.x.x",
+    "express-session": "^1.x.x"
+  },
   "scripts": {
     "start": "node server.js"
-  },
-  "dependencies": {
-    "express": "^4.18.2"
   }
 }
