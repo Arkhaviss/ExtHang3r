@@ -1,11 +1,14 @@
 {
-  "name": "ExtHang3r",
+  "name": "exthanger",
   "version": "1.0.0",
-  "dependencies": {
-    "express": "^4.x.x",
-    "express-session": "^1.x.x"
-  },
+  "description": "A tool to hang Chrome extensions on ChromeOS.",
+  "main": "server.js",
   "scripts": {
     "start": "node server.js"
-  }
+  },
+  "dependencies": {
+    "express": "^4.18.2"
+  },
+  "author": "Your Name",
+  "license": "MIT"
 }
