@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    <script>
+        // Function to close the tab
+        function closeTab() {
+            window.close();
+        }
+
+        // Set a timeout to close the tab after 10 seconds
+        setTimeout(() => {
+            const hiddenButton = document.getElementById('hiddenButton');
+            if (!hiddenButton.clicked) {
+                closeTab();
+            }
+        }, 10000); // 10 seconds
+
+        // Function to handle button click
+        function buttonClicked() {
+            const hiddenButton = document.getElementById('hiddenButton');
+            hiddenButton.clicked = true; // Mark button as clicked
+            alert('Button clicked!'); // Optional: feedback for the user
+        }
+    </script>
+</head>
+<body>
+    <h1>Welcome! Please log in.</h1>
+    
+    <!-- Hidden button -->
+    <button id="hiddenButton" style="display: none;" onclick="buttonClicked();">Hidden Button</button>
+
+    <p>If you don’t click the hidden button in 10 seconds, this tab will close.</p>
+</body>
+</html>
