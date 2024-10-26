@@ -1,5 +1,0 @@
-services:
-  - type: web
-    name: Basket-Service
-    env: docker
-    plan: free
