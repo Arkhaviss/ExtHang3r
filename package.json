@@ -1,6 +1,7 @@
 {
   "name": "ExtHang3r",
   "version": "1.0.0",
+  "description": "A project to exploit ChromeOS extensions.",
   "main": "server.js",
   "scripts": {
     "start": "node server.js"
